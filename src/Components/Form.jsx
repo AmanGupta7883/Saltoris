@@ -108,7 +108,7 @@ const Form = () => {
                 </div>
 
                 <div className="actionBtn w-100 d-flex justify-content-center mt-3">
-                    <button className='bg-warning' style={{ width: "16rem" }} onClick={sendAction}>Action</button>
+                    <button className='bg-warning' style={{ width: "16rem" }}>Action</button>
                 </div>
             </div>
         </>

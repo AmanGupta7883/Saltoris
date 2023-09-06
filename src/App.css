@@ -48,3 +48,17 @@ button{
   border-radius: 5px;
   padding: 0.5rem 0;
 }
+label.uploadFile input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+.uploadFile {
+  cursor: pointer;
+  border: 1px solid blue;
+  border-radius: 8px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: blue;
+  color: white;
+  display: inline-block;
+}

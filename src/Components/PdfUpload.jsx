@@ -12,8 +12,8 @@ const PdfUpload = () => {
     const onFileChange = (event) => {
         const selectedFile = event.target.files[0];
         setFile(selectedFile);
+        console.log(event.target.files);
     };
-
 
     const openPdf = () => {
         if (file) {
@@ -24,22 +24,24 @@ const PdfUpload = () => {
 
     const deletePdf = () => {
         if (file) {
-          setFile(null);
-          setNumPages(null);
-          setPageNumber(1);
+            setFile(null);
         }
-      };
+    };
 
     return (
         <>
             <div className="child-container left rounded bg-white p-3 d-flex align-items-center gap-1">
                 <p className='label'>Meter Reader Signature</p>
-                <input type="file" accept=".pdf" onChange={onFileChange} className='w-50' />
+                <label class="uploadFile">
+                    <input type="file" onChange={onFileChange} accept='.pdf' required />
+                    <span>Upload document</span>
+                </label>
+
                 {file && (
                     <div className='d-flex gap-2 align-items-center'>
                         <p className='mb-0'>{file.name}</p>
-                        <AiOutlineEye onClick={openPdf} className='fs-5' />
-                        <RiDeleteBin6Line onClick={deletePdf} className='fs-5' />
+                        <AiOutlineEye style={{cursor:"pointer"}} onClick={openPdf} className='fs-5' />
+                        <RiDeleteBin6Line style={{cursor:"pointer"}} onClick={deletePdf} className='fs-5' />
                     </div>
                 )}
             </div>
